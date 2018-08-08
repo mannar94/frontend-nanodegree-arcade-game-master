@@ -43,7 +43,7 @@
                 player.y=400;
                
                
-               document.getElementById("demo").innerHTML =allEnemies[i].x+" __________"+player.x+">>"+ allEnemies[i].y+" ********"+player.y;
+               //document.getElementById("demo").innerHTML =allEnemies[i].x+" __________"+player.x+">>"+ allEnemies[i].y+" ********"+player.y;
              
      }
         }       
