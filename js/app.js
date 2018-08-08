@@ -1,4 +1,5 @@
-    //Enemies our player must avoid
+"use strict";
+//Enemies our player must avoid
     var Enemy = function(x,y,speed) {
         // Variables applied to each of our instances go here,
         // we've provided one for you to get started
@@ -8,30 +9,14 @@
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
         this.sprite = 'images/enemy-bug.png';
+        
     };
     
     var countscore=0;
     var ls=1;
     var levelcount=0;
 
-    // Function that cheeck if Vehicle-player collisions happen &&  resets the game
-    function collision() {
-        var dist=35;
-               for(var i=0;i<allEnemies.length;i++){
-           if ((allEnemies[i].x) <= player.x + dist &&
-                (allEnemies[i].x + dist) >= (player.x) &&
-                (allEnemies[i].y)<= player.y + dist &&
-                (allEnemies[i].y+ dist) >= (player.y)){
-         alert("YOU LOSE Don't try again :P");
-               player.x=220;
-               player.y=400;
-               location.reload();
-                countscore=0;
-               document.getElementById("demo").innerHTML =" GO";
-
-     }
-        }       
-    }
+    
 
     // Update the enemy's position, required method for game
     // Parameter: dt, a time delta between ticks
@@ -45,7 +30,24 @@
             this.x=this.x-1000;
         }
 
-      collision();
+      // that cheeck if Vehicle-player collisions happen &&  resets the game
+   
+        var dist=32;
+               for(var i=0;i<allEnemies.length;i++){
+           if ((allEnemies[i].x) <= player.x + dist &&(allEnemies[i].x + dist) >= (player.x) &&
+                (allEnemies[i].y)<= player.y + dist &&(allEnemies[i].y+ dist) >= (player.y)){
+         alert("YOU LOSE Don't try again :P");
+              
+                countscore=0;
+                location.reload();
+                player.y=400;
+               
+               
+               document.getElementById("demo").innerHTML =allEnemies[i].x+" __________"+player.x+">>"+ allEnemies[i].y+" ********"+player.y;
+             
+     }
+        }       
+    
 
 
     };
